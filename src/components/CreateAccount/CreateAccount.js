@@ -6,7 +6,15 @@ class CreateAccount extends Component{
         super();
         this.state = {
             accountCreationData : {
-
+                    userName : '',
+                    accountType : '',
+                    mobileNumber : '',
+                    email : '',
+                    address : '',
+                    nominee : '',
+                    nomineeRelation : '',
+                    age : '',
+                    aadharNumber : ''
             }
         }
     }
@@ -22,11 +30,7 @@ class CreateAccount extends Component{
         console.log(accountCreationData, "asdfgh");
         this.getAccountCreation(accountCreationData).then(response => {
             console.log(response, '1232');
-            if(response.data.role === "admin"){
-                this.props.history.push('/adminPage/'+response.data.userId);
-            }else{
-                this.props.history.push('/userPage/'+response.data.userId);
-            }
+            alert("Form Submitted Successfully");
         }).catch(error => {
             alert(error.message);
         })
@@ -34,7 +38,7 @@ class CreateAccount extends Component{
     }
     getAccountCreation = (accountCreationData) => {
         return new Promise((resolve, reject) => {
-            axios.post('http://', accountCreationData).then((response) => {
+            axios.post('http://10.117.189.18:9091/ingbank/api/registration', accountCreationData).then((response) => {
                 resolve(response);
             }).catch((error) => {
                 reject(error);
@@ -46,9 +50,9 @@ class CreateAccount extends Component{
             <div className="container-fluid">
                 <form onSubmit={this.onSubmitEvent}>
                     <div className="form-group row">
-                        <label htmlFor="customerName" className="col-sm-2 col-form-label">Customer Name</label>
+                        <label htmlFor="userName" className="col-sm-2 col-form-label">Customer Name</label>
                         <div className="col-sm-10">
-                        <input type="text" name="customerName" className="form-control" id="customerName" placeholder="Enter Customer Name" required
+                        <input type="text" name="userName" className="form-control" id="userName" placeholder="Enter Customer Name" required
                         onChange={this.handleChangeEvent} />
                         </div>
                     </div>

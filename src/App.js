@@ -33,8 +33,8 @@ class App extends Component {
               <Route path="/" component={Login} exact/>
               <Route path="/login" component={()=> <Login  validateUser={this.validateUser} />} />
               <Route path="/logout" component={Logout} />
-              <Route path="/AdminPage" component={AdminPage} />
-              <Route path="/UserPage" component={UserPage} />
+              <Route path="/AdminPage/:userIdParams" component={AdminPage} />
+              <Route path="/UserPage/:userIdParams" component={UserPage} />
               <Route path="/CreateAccount" component={CreateAccount} />
         </Switch>
         </div>
