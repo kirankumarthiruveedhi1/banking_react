@@ -1,0 +1,11 @@
+{
+    "header":"ING Retail Banking",
+    "logintitle":"Ingrese a su cuenta",
+    "loginname":"Nombre de inicio de sesión",
+    "password":"Contraseña",
+    "account":"* Solicite una cuenta bancaria",
+    "login":"Iniciar",
+    "cancel":"Cancelar",
+    "ploginname":"Ingrese su nombre de usuario",
+    "ppassword":"Introducir la contraseña"
+}
